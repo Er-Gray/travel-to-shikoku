@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import React,{useState} from 'react';
 import { css } from '@emotion/react'
-import {ToggleButton, ToggleButtonGroup, Accordion, AccordionDetails, AccordionSummary} from "@mui/material"
+import {ToggleButton, ToggleButtonGroup, Accordion, AccordionDetails, AccordionSummary, Link} from "@mui/material"
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useEffect } from 'react';
 
@@ -14,6 +14,8 @@ interface RowLocationAccordionProps extends RowLocationProps{
   title:string;
   description:string;
   image?:string;
+  link?:string;
+  linkName?:string;
 }
 
 const App:React.VFC=()=>{
@@ -66,6 +68,8 @@ const App:React.VFC=()=>{
           title={"セブンイレブンしかない"}
           description={"昼食が少し遅めになるので、ここで少し食べておきましょう"}
           image={`${process.env.PUBLIC_URL}/tsuchiyamaSA.jpg`}
+          link={"https://sapa.c-nexco.co.jp/sapa?sapainfoid=168"}
+          linkName={"土山SA 下り|NEXCO中日本"}
         />
         <RowLocation
           time={"07:15"}
@@ -80,6 +84,8 @@ const App:React.VFC=()=>{
 春と秋の大潮時に最大となり、直径20mにも達する渦潮の大きさは世界一といわれています。\n
 1日のうちで潮流が最速となる時間帯に最も迫力ある渦潮が発生し、潮の流れない時間帯には渦潮を見ることはできません。`}
           image={`${process.env.PUBLIC_URL}/narutoUzusio.jpg`}
+          link={"https://www.uzunomichi.jp/"}
+          linkName={"渦の道公式ページ"}
         />
         <RowArrow/>
         <RowLocationAccordion
@@ -88,6 +94,8 @@ const App:React.VFC=()=>{
           title={"高知市街すぐ近く！\n真心こめた美食の老舗宿"}
           description={""}
           image={`${process.env.PUBLIC_URL}/tosagyoen.jpg`}
+          link={"https://www.tosagyoen.co.jp/"}
+          linkName={"真心こめた美食の老舗宿 土佐御苑"}
         />
         <RowArrow/>
         <RowLocationAccordion
@@ -99,6 +107,8 @@ const App:React.VFC=()=>{
 市場内の至る所にテーブルと椅子が並べられていて、それぞれ自分の好きなものを、好きなお店で買ってきて、持ち寄って食べるスタイルとなってます。\n
 なので市場内のほとんどの飲食店にはテーブルがありません。食事後は食器をまとめておけばスタッフがすべて回収してくれます。食べる・買う・見る・遊ぶ…と、楽しみ方は無限大。自分に合わせた楽しみ方ができます。`}
           image={`${process.env.PUBLIC_URL}/hirome.jpg`}
+          link={"https://hirome.co.jp/"}
+          linkName={"ひろめ市場公式ホームページ"}
         />
         <RowLocationAccordion
           time={"15:00"}
@@ -107,6 +117,8 @@ const App:React.VFC=()=>{
           description={`関ヶ原の戦いの功績により徳川家康から土佐一国を拝領した山内一豊は、慶長6年（1601）大高坂山に新城の築城工事を始め、慶長8年（1603）に本丸と二ノ丸が完成、入城しました。\n
 享保12年（1727）城下町の大火で追手門以外の城郭のほとんどを焼失しましたが、宝暦3年（1753）までに創建当時の姿のまま再建されました。`}
           image={`${process.env.PUBLIC_URL}/kochiCastle.jpg`}
+          link={"https://kochipark.jp/kochijyo/"}
+          linkName={"高知城公式ホームページ"}
         />
         <RowArrow/>
         <RowLocationAccordion
@@ -130,6 +142,8 @@ const App:React.VFC=()=>{
 スープの染み渡ったカツを食べると、これもトンカツにかけるソースに比べたら、ずいぶんあっさりした印象を受けます。\n
 しかしながら、味噌ラーメンとカツというペアリングとしては十分な味わいでした。`}
           image={`${process.env.PUBLIC_URL}/misokatsuRamen.jpg`}
+          link={"http://www.tontaro-kochi.com/document/?group=grp02"}
+          linkName={"豚太郎 メニュー"}
         />
       </div>
     )
@@ -152,6 +166,8 @@ const App:React.VFC=()=>{
 龍馬について知りたい場合は、近くに「龍馬坂本龍馬記念館」があるので合わせて楽しむことができます。\n
 海浜一帯は「桂浜公園」となっていて、公園内には売店もあります。`}
           image={`${process.env.PUBLIC_URL}/katsurahama.jpg`}
+          link={"https://www.city.kochi.kochi.jp/site/kanko/katsurahama.html"}
+          linkName={"桂浜 - 高知市公式ホームページ"}
         />
         <RowLocation
           time={"10:30"}
@@ -165,6 +181,8 @@ const App:React.VFC=()=>{
           description={`四万十屋は、1967年の開業以来、四万十の自然や川漁師と共に生活し、四万十の本物の味を守り、現在へとつなげてきました。\n
 日本最後の清流と呼ばれる四万十川のほとりで、ここでしか味わえない四万十の食文化をお楽しみください。`}
           image={`${process.env.PUBLIC_URL}/unagi.jpg`}
+          link={"https://shimantoya.com/"}
+          linkName={"四万十屋｜四万十川の漁師料理とお土産"}
         />
         <RowLocation
           time={"13:45"}
@@ -184,6 +202,8 @@ const App:React.VFC=()=>{
 また、艦上機型も試作されたものの、既に日本の空母機動部隊は壊滅しており、量産はされなかった。\n
 旧日本軍において米軍機に対抗しうる数少ない機体。`}
           image={`${process.env.PUBLIC_URL}/shidenKai.jpg`}
+          link={"http://www.nanreku.jp/site/ainan/shidenkai-tenjikan.html"}
+          linkName={"紫電改（しでんかい）展示館"}
         />
         <RowArrow/>
         <RowLocationAccordion
@@ -195,6 +215,8 @@ const App:React.VFC=()=>{
 泉温は最も低いもので20℃、最も高いもので55℃程度です。\n
 また、各源泉から地中に埋設した送湯管で、4ヶ所の分湯場に集めたお湯を、道後温泉本館・椿の湯、周辺のホテル・旅館へ配湯しています。`}
           image={`${process.env.PUBLIC_URL}/dougoOnsen.jpg`}
+          link={"https://tsubakikan.co.jp/"}
+          linkName={"道後温泉で宿泊・女子旅なら ホテル椿館 【公式】"}
         />
       </div>
     )
@@ -219,6 +241,8 @@ const App:React.VFC=()=>{
 「うどんは鍛え育てるもの」という信念のもと、絶妙な力加減で踏み鍛えた自慢のうどんは、ツヤがありしなやかで、強いコシが感じられる逸品。\n
 看板メニューの「ひや天おろし」は、巨大なエビ天が2本も載ったボリューム満点の1杯である。お土産うどんの販売もあり。`}
           image={`${process.env.PUBLIC_URL}/udon.jpg`}
+          link={"https://www.okasen.com/honten/"}
+          linkName={"〔公式〕讃岐うどん おか泉 －美味しい讃岐うどんをご提供－"}
         />
       </div>
     )
@@ -254,6 +278,7 @@ const App:React.VFC=()=>{
           <h2 css={locationTitle}>{props.title}</h2>
           {props.image?<img src={props.image} css={descriptionImage} alt=""/>:""}
           <p css={description}>{props.description}</p>
+          {props.link&&props.linkName?<Link href={props.link}>{props.linkName}</Link>:""}
         </AccordionDetails>
       </Accordion>
     )
